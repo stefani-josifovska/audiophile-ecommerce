@@ -1,0 +1,26 @@
+.container {
+  margin-top: 90px;
+  padding: 0 6.4%;
+  box-sizing: border-box;
+}
+
+.back-btn {
+  margin-top: 16px;
+  background-color: transparent;
+  border: none;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 167%;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+.back-btn:hover,
+.back-btn:active {
+  cursor: pointer;
+  color: #d87d4a;
+  opacity: 90%;
+}

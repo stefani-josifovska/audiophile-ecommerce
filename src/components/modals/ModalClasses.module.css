@@ -1,0 +1,176 @@
+.backdrop {
+  position: fixed;
+  /* top: 90px; */
+  top: 0;
+  margin-top: 90px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 90px);
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.open-menu {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 30;
+}
+
+.cart-container {
+  position: fixed;
+  top: calc(90px + 3%);
+  margin: 0 6.5%;
+  z-index: 30;
+  background-color: white;
+  width: 87%;
+  padding: 32px 28px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.cart-first {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cart-container h3 {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1.28571px;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+}
+
+.cart-container h5 {
+  text-align: center;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0 1em 0;
+}
+
+.remove {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 167%;
+  text-decoration-line: underline;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.remove:hover,
+.remove:active {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.cart-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.cart-item img {
+  width: 64px;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.overview h4 {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 167%;
+  color: #000000;
+  margin: 0;
+}
+
+.overview p {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 179%;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.qty {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 32px;
+  background: #f1f1f1;
+  flex: 1 1 0;
+  max-width: 115px;
+}
+
+.qty button {
+  background: transparent;
+  border: none;
+}
+
+.qty button:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.cart-btn {
+  width: 100%;
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-price p {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 167%;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.total-price h3 {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+}

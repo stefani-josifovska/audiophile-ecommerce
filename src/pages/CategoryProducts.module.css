@@ -1,0 +1,18 @@
+.category-name {
+  margin-top: 90px;
+  height: 102px;
+  background-color: #000;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 64px;
+}

@@ -1,0 +1,19 @@
+.btn {
+  height: 48px;
+  width: 160px;
+  background-color: #d87d4a;
+  color: #fff;
+  font-size: 13px;
+  line-height: 17.76px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  border: none;
+}
+
+.btn:hover, .btn:active {
+    cursor: pointer;
+    opacity: 95%;
+}

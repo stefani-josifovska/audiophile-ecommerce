@@ -1,0 +1,39 @@
+.container {
+  margin: 0 6.4% 120px;
+}
+
+.container img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.container h2 {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+  margin-top: 40px;
+  margin-bottom: 32px;
+}
+
+.container h2 span {
+  color: #d87d4a;
+}
+
+.container p {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 167%;
+  text-align: center;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  margin: 0;
+}

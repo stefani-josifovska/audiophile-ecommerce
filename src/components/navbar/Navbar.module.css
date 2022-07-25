@@ -1,0 +1,19 @@
+.container {
+    background-color: #101010;
+    height: 90px;
+    border-bottom: 1px solid #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 6.4%;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0
+}
+
+svg:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
