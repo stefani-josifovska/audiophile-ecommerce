@@ -11,7 +11,6 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [addQty, setAddQty] = useState(1);
   const dispatch = useDispatch();
-  console.log('rerendered')
 
   const product = allProducts.find((product) => product.id === id);
   const navigate = useNavigate();
@@ -45,6 +44,11 @@ const ProductDetails = () => {
         qty: addQty
       })
     );
+  };
+
+  const onViewNewProduct = () => {
+    window.scrollTo(0, 0);
+    setAddQty(1);
   };
 
   return (
@@ -108,7 +112,7 @@ const ProductDetails = () => {
                   {item.name.substring(0, item.name.lastIndexOf(" "))}
                 </h3>
                 <Link to={`/${item.category}/${id}`}>
-                  <Button className={classes["see-product"]}>
+                  <Button className={classes["see-product"]} onClick={onViewNewProduct}>
                     See product
                   </Button>
                 </Link>

@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate replace to="/homepage" />} />
         <Route path="/homepage" element={<HomePage />} />
-        <Route path="/:category/" element={<CategoryProducts />} />
+        <Route path="/:category/*" element={<CategoryProducts />} />
         <Route path="/:category/:id" element={<ProductDetails />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>

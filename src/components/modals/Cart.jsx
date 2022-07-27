@@ -44,30 +44,38 @@ const CartContent = () => {
       </div>
       {cartItems.length > 0 ? (
         <div>
-          {cartItems.map((item) => {
-            return (
-              <div className={classes["cart-item"]} key={item.id}>
-                <img src={item.img} alt="" />
-                <div className={classes.overview}>
-                  <h4>{item.name}</h4>
-                  <p>{`$ ${item.price
-                    .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`}</p>
+          <div className={classes["cart-content"]}>
+            {cartItems.map((item) => {
+              return (
+                <div className={classes["cart-item"]} key={item.id}>
+                  <div className={classes['img-name']}>
+                    <img src={item.img} alt="" />
+                    <div>
+                      <h4>{item.name}</h4>
+                      <p>{`$ ${item.price
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`}</p>
+                    </div>
+                  </div>
+                  <div className={classes.qty} id={item.id}>
+                    <button onClick={onDecreaseQtyHandler}>-</button>
+                    <h6>{item.qty}</h6>
+                    <button onClick={onIncreaseQtyHandler}>+</button>
+                  </div>
                 </div>
-                <div className={classes.qty} id={item.id}>
-                  <button onClick={onDecreaseQtyHandler}>-</button>
-                  <h6>{item.qty}</h6>
-                  <button onClick={onIncreaseQtyHandler}>+</button>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
           <div className={classes["total-price"]}>
             <p>total</p>
             <h3>{`$ ${totalPrice}`}</h3>
           </div>
           <Link to="/checkout">
-            <Button className={classes["cart-btn"]} style={{ width: "100%" }} onClick={onCheckoutClickHandler}>
+            <Button
+              className={classes["cart-btn"]}
+              style={{ width: "100%" }}
+              onClick={onCheckoutClickHandler}
+            >
               Checkout
             </Button>
           </Link>

@@ -1,6 +1,5 @@
 .backdrop {
   position: fixed;
-  /* top: 90px; */
   top: 0;
   margin-top: 90px;
   left: 0;
@@ -85,7 +84,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
   margin-bottom: 32px;
 }
 
@@ -93,15 +91,21 @@
   width: 64px;
 }
 
-.overview {
+.img-name {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
-  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2%;
+  flex: 2 2 0;
+  text-align: start;
 }
 
-.overview h4 {
+.cart-content {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.img-name h4 {
   font-family: "Manrope";
   font-style: normal;
   font-weight: 700;
@@ -111,7 +115,7 @@
   margin: 0;
 }
 
-.overview p {
+.img-name p {
   font-family: "Manrope";
   font-style: normal;
   font-weight: 700;
@@ -130,7 +134,9 @@
   height: 32px;
   background: #f1f1f1;
   flex: 1 1 0;
-  max-width: 115px;
+  /* max-width: 115px; */
+  width: 96px;
+  align-self: flex-end;
 }
 
 .qty button {
@@ -173,4 +179,98 @@
   line-height: 25px;
   text-align: center;
   color: #000000;
+}
+
+.conf-container {
+  position: fixed;
+  top: calc(90px + 4%);
+  margin: 0 6.5%;
+  z-index: 30;
+  background-color: white;
+  width: 87%;
+  padding: 32px 28px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.conf-container svg {
+  cursor: auto;
+}
+
+.ordered-item {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+.wrap {
+  padding: 6.4%;
+}
+
+.item-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 10px 0;
+}
+
+.ordered-item img {
+  width: 30px;
+}
+
+.ordered-item h6,
+.ordered-item p {
+  margin: 0;
+}
+
+.conf-container p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 179%;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+.grand-total {
+  background-color: #000000;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 6.4%;
+  box-sizing: border-box;
+}
+
+.grand-total h5 {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 167%;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.grand-total h4 {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 167%;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  margin: 0;
+}
+
+.conf-container h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 117%;
+  letter-spacing: 0.857143px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.checkout-btn {
+  width: 100%;
+  margin-top: 23px;
 }

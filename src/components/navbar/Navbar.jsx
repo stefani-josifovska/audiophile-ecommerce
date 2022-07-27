@@ -13,9 +13,13 @@ const Navbar = () => {
 
   const isMenuOpen = useSelector((state) => state.menu.isMenuOpen);
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
+  const cartQty = useSelector((state) => state.cart.cartItems.length);
 
   const onMenuClickHandler = () => {
     dispatch(menuActions.toggleMenu());
+    if (!isMenuOpen) {
+      window.scrollTo(0, 0);
+    }
     dispatch(cartActions.closeCart());
   };
 
@@ -31,7 +35,10 @@ const Navbar = () => {
         <Link to="/homepage">
           <div>{companyLogo}</div>
         </Link>
-        <div onClick={onCartClickHandler}>{CartIcon}</div>
+        <div className={classes.cart} onClick={onCartClickHandler}>
+          {CartIcon}
+          {cartQty > 0 && <div>{cartQty}</div>}
+        </div>
       </div>
       {isMenuOpen && <MenuModal />}
       {isCartOpen && <Cart />}

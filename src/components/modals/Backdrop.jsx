@@ -4,14 +4,14 @@ import { cartActions } from "../../store/cartSlice";
 import { menuActions } from "../../store/menuSlice";
 import classes from "./ModalClasses.module.css";
 
-const Backdrop = () => {
+const Backdrop = ({onClick}) => {
   const dispatch = useDispatch();
   const onCloseHandler = () => {
     dispatch(menuActions.closeMenu());
     dispatch(cartActions.closeCart());
   };
 
-  return <div className={classes.backdrop} onClick={onCloseHandler} />;
+  return <div className={classes.backdrop} onClick={onClick ? onClick : onCloseHandler} />;
 };
 
 export default Backdrop;
