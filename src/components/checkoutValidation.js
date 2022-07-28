@@ -15,11 +15,11 @@ export const checkoutValidation = Yup.object().shape({
   city: Yup.string().min(3, "Too short").required(requiredMsg),
   country: Yup.string().required(requiredMsg),
   method: Yup.string(),
-  enmb: Yup.number().when('method===', {
+  enmb: Yup.number().when('method', {
     is: "emoney",
     then: Yup.number().required(requiredMsg),
   }),
-  pin: Yup.number().when('method===', {
+  pin: Yup.number().when('method', {
     is: "emoney",
     then: Yup.number().required(requiredMsg),
   }),
