@@ -70,14 +70,6 @@
   margin-top: 9px;
 }
 
-.form-element {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 24px;
-}
-
 .radio {
   width: 100%;
   display: flex;
@@ -94,6 +86,7 @@
   letter-spacing: -0.25px;
   color: #000000;
   margin-top: 16px;
+  height: 54px;
 }
 
 .radio input {
@@ -101,6 +94,11 @@
   margin: 0 21px 0 20px;
   accent-color: #d87d4a;
   cursor: pointer;
+  height: fit-content;
+}
+
+.radio label {
+  line-height: 54px;
 }
 
 .radio:hover,

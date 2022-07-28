@@ -11,7 +11,7 @@ const Backdrop = ({onClick}) => {
     dispatch(cartActions.closeCart());
   };
 
-  return <div className={classes.backdrop} onClick={onClick ? onClick : onCloseHandler} />;
+  return <div className={classes.backdrop} onClick={onClick || onCloseHandler} />;
 };
 
 export default Backdrop;

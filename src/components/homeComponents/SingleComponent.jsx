@@ -13,14 +13,14 @@ const arrowRight = (
   </svg>
 );
 
-const SingleComponent = (props) => {
+const SingleComponent = ({src, alt, productName, onClick}) => {
   return (
     <div className={classes.container}>
-      <img src={props.src} alt={props.alt} />
+      <img src={src} alt={alt} />
       <div className={classes.mask}>
-        <h3>{props.productName}</h3>
-        <Link style={{ textDecoration: 'none' }} to={`/${props.productName}`}>
-          <div onClick={props.onClick}>
+        <h3>{productName}</h3>
+        <Link style={{ textDecoration: 'none' }} to={`/${productName}`}>
+          <div onClick={onClick}>
             <h5>shop</h5>
             {arrowRight}
           </div>

@@ -12,7 +12,7 @@ const productsToDisplay = [
   { productName: "earphones", image: earphonesThumbnail },
 ];
 
-const ProductsDisplay = (props) => {
+const ProductsDisplay = ({className}) => {
   const dispatch = useDispatch();
 
   const onItemClickHandler = () => {
@@ -20,7 +20,7 @@ const ProductsDisplay = (props) => {
   };
 
   return (
-    <section className={props.className}>
+    <section className={className}>
       {productsToDisplay.map((product) => {
         return (
           <SingleComponent
