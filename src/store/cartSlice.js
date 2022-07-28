@@ -2,7 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: { isCartOpen: false, cartItems: [], totalPrice: 0 },
+  initialState: {
+    isCartOpen: false,
+    cartItems: JSON.parse(localStorage.getItem("cartItems")) || [],
+    totalPrice: +localStorage.getItem("totalPrice") || 0,
+  },
   reducers: {
     toggleCart(state) {
       state.isCartOpen = !state.isCartOpen;
@@ -32,9 +36,13 @@ const cartSlice = createSlice({
           qty: state.cartItems[index].qty + payload.payload.qty,
         };
       }
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      localStorage.setItem("totalPrice", state.totalPrice);
     },
     emptyCart(state) {
       state.cartItems = [];
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      localStorage.setItem("totalPrice", state.totalPrice);
     },
     changeQty(state, payload) {
       const index = state.cartItems.findIndex(
@@ -58,6 +66,8 @@ const cartSlice = createSlice({
         };
         state.totalPrice = state.totalPrice + state.cartItems[index].price;
       }
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      localStorage.setItem("totalPrice", state.totalPrice);
     },
   },
 });

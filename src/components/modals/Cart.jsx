@@ -9,7 +9,7 @@ import classes from "./ModalClasses.module.css";
 
 const CartContent = () => {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartItems = useSelector((state) => (state.cart.cartItems));
   const totalPrice = useSelector((state) =>
     state.cart.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   );
