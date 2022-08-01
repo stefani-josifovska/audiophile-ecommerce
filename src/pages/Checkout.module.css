@@ -208,3 +208,26 @@ input[type="number"] {
   width: 100%;
   margin-bottom: 129px;
 }
+
+@media (min-width: 481px) {
+  .billing-details, .shipping-info, .emoney-info, .payment {
+    display: grid;
+    grid-template-columns: repeat(2, 6fr);
+    grid-template-rows: repeat(2, 6fr);
+    gap: 16px;
+  }
+  .billing-details div:first-of-type {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  .shipping-info div:first-of-type {
+    grid-column: 1 / -1;
+  }
+  .payment label {
+    grid-column: 1 / 2;
+  }
+  .payment div {
+    grid-column: 2 / -1;
+    margin-top: 0;
+  }
+}

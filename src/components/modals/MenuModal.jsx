@@ -6,8 +6,8 @@ import classes from './ModalClasses.module.css';
 
 const OpenedMenu = () => {
   return (
-    <section >
-      <ProductsDisplay className={classes['open-menu']} />
+    <section className={classes['open-menu']}>
+      <ProductsDisplay  />
     </section>
   );
 };

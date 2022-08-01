@@ -4,7 +4,6 @@
 
 .speaker-one-container {
   background-color: #d87d4a;
-  /* background-image: linear-gradient(#D87D4A, #D87D4A), url("../../../assets/home/desktop/pattern-circles.svg"); */
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -109,4 +108,26 @@
   background-color: transparent;
   border: 1px solid black;
   color: black;
+}
+
+@media (min-width: 481px) {
+  .speaker-two-container {
+    background: url("../../assets/home/tablet/image-speaker-zx7.jpg") no-repeat;
+  }
+  .speaker-two-container div {
+    left: 62px;
+  }
+  .earphones-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2%;
+  }
+  .earphones-container img {
+    width: 48%;
+    margin: 0;
+  }
+  .earphones-mask {
+    width: 48%;
+  }
 }

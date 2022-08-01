@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useMediaQuery } from "usehooks-ts/dist/esm/useMediaQuery";
 import { useDispatch } from "react-redux";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Button from "../components/UI/Button";
@@ -8,6 +9,16 @@ import { cartActions } from "../store/cartSlice";
 import classes from "./ProductDetails.module.css";
 
 const ProductDetails = () => {
+  const isTabletSize = useMediaQuery(`(min-width: 481px)`);
+
+  let imgPath = "image";
+  let previewImgPath = "previewImg";
+
+  if (isTabletSize) {
+    imgPath = "separateImageTablet";
+    previewImgPath = "separateImageTablet";
+  }
+
   const { id } = useParams();
   const [addQty, setAddQty] = useState(1);
   const dispatch = useDispatch();
@@ -41,7 +52,7 @@ const ProductDetails = () => {
         img: product.image,
         name: product.name.substring(0, product.name.lastIndexOf(" ")),
         price: product.price,
-        qty: addQty
+        qty: addQty,
       })
     );
   };
@@ -57,22 +68,26 @@ const ProductDetails = () => {
         <button className={classes.back} onClick={onBackClick}>
           Go Back
         </button>
-        <img src={product.image} alt="" />
-        {product.newProduct && <h4>new product</h4>}
-        <h2>{product.name}</h2>
-        <p>{product.description}</p>
-        <h6 className={classes.price}>{`$ ${product.price
-          .toString()
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`}</h6>
-        <div className={classes["qty-container"]}>
-          <div className={classes.qty}>
-            <button onClick={onRemoveFromQty}>-</button>
-            <h6>{addQty}</h6>
-            <button onClick={onAddToQty}>+</button>
+        <div className={classes["subcontainer"]}>
+          <img src={product[imgPath]} alt="" />
+          <div>
+            {product.newProduct && <h4>new product</h4>}
+            <h2>{product.name}</h2>
+            <p>{product.description}</p>
+            <h6 className={classes.price}>{`$ ${product.price
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`}</h6>
+            <div className={classes["qty-container"]}>
+              <div className={classes.qty}>
+                <button onClick={onRemoveFromQty}>-</button>
+                <h6>{addQty}</h6>
+                <button onClick={onAddToQty}>+</button>
+              </div>
+              <Button className={classes.btn} onClick={onAddToCartHandler}>
+                add to cart
+              </Button>
+            </div>
           </div>
-          <Button className={classes.btn} onClick={onAddToCartHandler}>
-            add to cart
-          </Button>
         </div>
         <div className={classes.features}>
           <h3>features</h3>
@@ -103,22 +118,27 @@ const ProductDetails = () => {
           <h3 style={{ marginTop: "120px", marginBottom: "40px" }}>
             you may also like
           </h3>
-          {product.suggestions.map((id) => {
-            let item = allProducts.find((product) => product.id === id);
-            return (
-              <section key={Math.random().toString()}>
-                <img src={item.previewImg} alt="" />
-                <h3 style={{ marginTop: "32px", marginBottom: "32px" }}>
-                  {item.name.substring(0, item.name.lastIndexOf(" "))}
-                </h3>
-                <Link to={`/${item.category}/${id}`}>
-                  <Button className={classes["see-product"]} onClick={onViewNewProduct}>
-                    See product
-                  </Button>
-                </Link>
-              </section>
-            );
-          })}
+          <div className={classes["suggestions-container"]}>
+            {product.suggestions.map((id) => {
+              let item = allProducts.find((product) => product.id === id);
+              return (
+                <section key={Math.random().toString()}>
+                  <img src={item[previewImgPath]} alt="" />
+                  <h3 style={{ marginTop: "32px", marginBottom: "32px" }}>
+                    {item.name.substring(0, item.name.lastIndexOf(" "))}
+                  </h3>
+                  <Link to={`/${item.category}/${id}`}>
+                    <Button
+                      className={classes["see-product"]}
+                      onClick={onViewNewProduct}
+                    >
+                      See product
+                    </Button>
+                  </Link>
+                </section>
+              );
+            })}
+          </div>
         </div>
       </section>
       <MutualFooter />

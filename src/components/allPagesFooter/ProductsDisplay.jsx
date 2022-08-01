@@ -5,6 +5,7 @@ import SingleComponent from "../homeComponents/SingleComponent";
 import headphonesThumbnail from "../../assets/shared/desktop/image-category-thumbnail-headphones.png";
 import speakerThumbnail from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
 import earphonesThumbnail from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
+import classes from "../homeComponents/SingleComponent.module.css";
 
 const productsToDisplay = [
   { productName: "headphones", image: headphonesThumbnail },
@@ -12,7 +13,7 @@ const productsToDisplay = [
   { productName: "earphones", image: earphonesThumbnail },
 ];
 
-const ProductsDisplay = ({className}) => {
+const ProductsDisplay = () => {
   const dispatch = useDispatch();
 
   const onItemClickHandler = () => {
@@ -20,7 +21,7 @@ const ProductsDisplay = ({className}) => {
   };
 
   return (
-    <section className={className}>
+    <section className={classes['components-container']}>
       {productsToDisplay.map((product) => {
         return (
           <SingleComponent

@@ -24,8 +24,6 @@ const Checkout = () => {
   }, []);
 
   const onSubmitCheckout = (values) => {
-    console.log(values);
-
     setIsFormSubmitted(true);
   };
 
@@ -55,69 +53,110 @@ const Checkout = () => {
             <Form id="checkout-form">
               <h1>checkout</h1>
               <h3>billing details</h3>
-              <label htmlFor="name">Name</label>
-              <Field
-                type="text"
-                name="name"
-                placeholder="Alexei Ward"
-                id="name"
-              />
-              {errors.name && touched.name && <div>{errors.name}</div>}
+              <div className={classes["billing-details"]}>
+                <div>
+                  <label htmlFor="name">Name</label>
+                  <Field
+                    type="text"
+                    name="name"
+                    placeholder="Alexei Ward"
+                    id="name"
+                  />
+                  {errors.name && touched.name && <div>{errors.name}</div>}
+                </div>
 
-              <label htmlFor="email">Email Address</label>
-              <Field
-                type="email"
-                name="email"
-                placeholder="alexei@mail.com"
-                id="email"
-              />
-              {errors.email && touched.email && <div>{errors.email}</div>}
+                <div>
+                  <label htmlFor="email">Email Address</label>
+                  <Field
+                    type="email"
+                    name="email"
+                    placeholder="alexei@mail.com"
+                    id="email"
+                  />
+                  {errors.email && touched.email && <div>{errors.email}</div>}
+                </div>
 
-              <label htmlFor="nmb">Phone Number</label>
-              <Field
-                type="number"
-                name="nmb"
-                placeholder="+1 202-555-0136"
-                id="nmb"
-              />
-              {errors.nmb && touched.nmb && <div>{errors.nmb}</div>}
+                <div>
+                  <label htmlFor="nmb">Phone Number</label>
+                  <Field
+                    type="number"
+                    name="nmb"
+                    placeholder="+1 202-555-0136"
+                    id="nmb"
+                  />
+                  {errors.nmb && touched.nmb && <div>{errors.nmb}</div>}
+                </div>
+              </div>
 
               <h3>shipping info</h3>
-              <label htmlFor="address">Your Address</label>
-              <Field
-                type="text"
-                name="address"
-                placeholder="1137 Williams Avenue"
-                id="address"
-              />
-              {errors.address && touched.address && <div>{errors.address}</div>}
+              <div className={classes["shipping-info"]}>
+                <div>
+                  <label htmlFor="address">Your Address</label>
+                  <Field
+                    type="text"
+                    name="address"
+                    placeholder="1137 Williams Avenue"
+                    id="address"
+                  />
+                  {errors.address && touched.address && (
+                    <div>{errors.address}</div>
+                  )}
+                </div>
 
-              <label htmlFor="zip">ZIP Code</label>
-              <Field type="number" name="zip" placeholder="10001" id="zip" />
-              {errors.zip && touched.zip && <div>{errors.zip}</div>}
+                <div>
+                  <label htmlFor="zip">ZIP Code</label>
+                  <Field
+                    type="number"
+                    name="zip"
+                    placeholder="10001"
+                    id="zip"
+                  />
+                  {errors.zip && touched.zip && <div>{errors.zip}</div>}
+                </div>
 
-              <label htmlFor="city">City</label>
-              <Field type="text" name="city" placeholder="New York" id="city" />
-              {errors.city && touched.city && <div>{errors.city}</div>}
+                <div>
+                  <label htmlFor="city">City</label>
+                  <Field
+                    type="text"
+                    name="city"
+                    placeholder="New York"
+                    id="city"
+                  />
+                  {errors.city && touched.city && <div>{errors.city}</div>}
+                </div>
 
-              <label htmlFor="country">Country</label>
-              <Field
-                type="text"
-                name="country"
-                placeholder="United States"
-                id="country"
-              />
-              {errors.country && touched.country && <div>{errors.country}</div>}
+                <div>
+                  <label htmlFor="country">Country</label>
+                  <Field
+                    type="text"
+                    name="country"
+                    placeholder="United States"
+                    id="country"
+                  />
+                  {errors.country && touched.country && (
+                    <div>{errors.country}</div>
+                  )}
+                </div>
+              </div>
 
               <h3>payment details</h3>
-              <div role="group">
-                <div className={`${classes.radio} ${values.method === "emoney" && classes.checked}`}>
+              <div role="group" className={classes.payment}>
+                <label htmlFor="">Payment Method</label>
+                <div
+                  className={`${classes.radio} ${
+                    values.method === "emoney" && classes.checked
+                  }`}
+                >
                   <label>
                     <Field type="radio" name="method" value="emoney" />
                     e-Money
                   </label>
                 </div>
-                <div className={`${classes.radio} ${values.method === "cash" && classes.checked}`}>
+                <div
+                  className={`${classes.radio} ${
+                    values.method === "cash" && classes.checked
+                  }`}
+                >
                   <label>
                     <Field type="radio" name="method" value="cash" />
                     Cash on Delivery
@@ -126,13 +165,17 @@ const Checkout = () => {
               </div>
 
               {values.method === "emoney" && (
-                <>
-                  <label htmlFor="enbm">e-Money Number</label>
-                  <Field type="number" name="enmb" placeholder="238521993" />
+                <div className={classes["emoney-info"]}>
+                  <div>
+                    <label htmlFor="enbm">e-Money Number</label>
+                    <Field type="number" name="enmb" placeholder="238521993" />
+                  </div>
 
-                  <label htmlFor="pin">e-Money PIN</label>
-                  <Field type="number" name="pin" placeholder="6891" />
-                </>
+                  <div>
+                    <label htmlFor="pin">e-Money PIN</label>
+                    <Field type="number" name="pin" placeholder="6891" />
+                  </div>
+                </div>
               )}
             </Form>
           )}

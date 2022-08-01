@@ -16,3 +16,9 @@
   justify-content: center;
   margin-bottom: 64px;
 }
+
+@media (min-width: 481px) {
+  .category-name {
+    height: 246px;
+  }
+}

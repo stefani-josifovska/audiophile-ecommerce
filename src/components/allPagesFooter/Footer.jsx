@@ -10,16 +10,16 @@ const Footer = () => {
       <div className={classes["orange-line"]}></div>
       <img src={companyLogo} alt="company logo" />
       <ul>
-        <Link to='/homepage' style={{ textDecoration: 'none' }} >
+        <Link to="/homepage" style={{ textDecoration: "none" }}>
           <li>home</li>
         </Link>
-        <Link to='/headphones' style={{ textDecoration: 'none' }} >
+        <Link to="/headphones" style={{ textDecoration: "none" }}>
           <li>headphones</li>
         </Link>
-        <Link to='/speakers' style={{ textDecoration: 'none' }} >
+        <Link to="/speakers" style={{ textDecoration: "none" }}>
           <li>speakers</li>
         </Link>
-        <Link to='/earphones' style={{ textDecoration: 'none' }} >
+        <Link to="/earphones" style={{ textDecoration: "none" }}>
           <li>earphones</li>
         </Link>
       </ul>
@@ -29,11 +29,13 @@ const Footer = () => {
         helping you get the most out of personal audio. Come and visit our demo
         facility - we’re open 7 days a week.
       </p>
-      <p>Copyright 2021. All Rights Reserved</p>
-      <div>
-        {fbLogo}
-        {twitterLogo}
-        {instaLogo}
+      <div className={classes['copyright-logos']}>
+        <p>Copyright 2021. All Rights Reserved</p>
+        <div>
+          {fbLogo}
+          {twitterLogo}
+          {instaLogo}
+        </div>
       </div>
     </section>
   );

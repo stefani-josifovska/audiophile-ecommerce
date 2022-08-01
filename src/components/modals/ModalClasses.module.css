@@ -134,7 +134,6 @@
   height: 32px;
   background: #f1f1f1;
   flex: 1 1 0;
-  /* max-width: 115px; */
   width: 96px;
   align-self: flex-end;
 }
@@ -273,4 +272,53 @@
 .checkout-btn {
   width: 100%;
   margin-top: 23px;
+}
+
+@media (min-width: 481px) {
+  .open-menu {
+    z-index: 90;
+    position: absolute;
+    width: 100%;
+    background: white;
+    top: 90px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .cart-container {
+    right: 0;
+    width: 50%;
+  }
+  .conf-container {
+    width: 70%;
+    margin: 0 15%;
+  }
+  .ordered-item {
+    display: flex;
+    justify-content: space-between;
+  }
+  .grand-total {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1 1 0;
+  }
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1.5 1.5 0;
+  }
+  .item-summary {
+    width: 90%;
+  }
+  .item-summary p {
+    align-self: flex-start;
+  }
+  .btn {
+    width: 100%;
+  }
 }

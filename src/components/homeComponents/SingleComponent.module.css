@@ -71,3 +71,23 @@
 .container h5 {
     margin: 17px 0;
 }
+
+@media (min-width: 481px) {
+  .components-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 6.4%;
+  }
+  .container {
+    flex: 1 1 0;
+    margin: 0;
+  }
+  .container img {
+    width: auto;
+  }
+  .container mask {
+    width: auto;
+  }
+}

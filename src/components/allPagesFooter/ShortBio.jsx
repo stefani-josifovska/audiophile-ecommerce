@@ -1,12 +1,15 @@
 import React from "react";
-import heroImg from "../../assets/shared/mobile/image-best-gear.jpg";
+// import heroImgMobile from "../../assets/shared/mobile/image-best-gear.jpg";
 import classes from "./ShortBio.module.css";
 
 const ShortBio = () => {
   return (
     <section className={classes.container}>
-      <img src={heroImg} alt="a person listening to music" />
-      <h2>Bringing you the <span>best</span> audio gear</h2>
+      <div className={classes.img}></div>
+      {/* <img src={heroImgMobile} alt="a person listening to music" /> */}
+      <h2>
+        Bringing you the <span>best</span> audio gear
+      </h2>
       <p>
         Located at the heart of New York City, Audiophile is the premier store
         for high end headphones, earphones, speakers, and audio accessories. We

@@ -1,8 +1,18 @@
 import p1Image from "../assets/shared/desktop/image-xx99-mark-two-headphones.jpg";
+import p1ImageTablet from "../assets/shared/mobile/image-xx99-mark-two-headphones.jpg";
+import p1ImageTabletSeparate from "../assets/product-xx99-mark-two-headphones/tablet/image-product.jpg";
 import p2Image from "../assets/shared/desktop/image-xx99-mark-one-headphones.jpg";
+import p2ImageTablet from "../assets/shared/mobile/image-xx99-mark-one-headphones.jpg";
+import p2ImageSeparate from "../assets/product-xx99-mark-one-headphones/tablet/image-product.jpg";
 import p3Image from "../assets/shared/desktop/image-xx59-headphones.jpg";
+import p3ImageTablet from "../assets/shared/mobile/image-xx59-headphones.jpg";
+import p3ImageSeparate from "../assets/product-xx59-headphones/tablet/image-product.jpg";
 import p4Image from "../assets/shared/desktop/image-zx9-speaker.jpg";
+import p4ImageTablet from "../assets/shared/mobile/image-zx9-speaker.jpg";
+import p4ImageSeparate from "../assets/product-zx9-speaker/tablet/image-product.jpg";
 import p5Image from "../assets/shared/desktop/image-zx7-speaker.jpg";
+import p5ImageTablet from "../assets/shared/mobile/image-zx7-speaker.jpg";
+import p5ImageSeparate from "../assets/product-zx7-speaker/tablet/image-product.jpg";
 import p6Image from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import p1img1 from "../assets/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg";
 import p1img2 from "../assets/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg";
@@ -37,6 +47,8 @@ export const allProducts = [
     name: "XX99 Mark II Headphones",
     price: 2999,
     image: p1Image,
+    imageTablet: p1ImageTablet,
+    separateImageTablet: p1ImageTabletSeparate,
     description:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     features1:
@@ -61,6 +73,8 @@ export const allProducts = [
     name: "XX99 Mark I Headphones",
     price: 1750,
     image: p2Image,
+    imageTablet: p2ImageTablet,
+    separateImageTablet: p2ImageSeparate,
     description:
       "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
     features1:
@@ -84,6 +98,8 @@ export const allProducts = [
     name: "XX59 Headphones",
     price: 899,
     image: p3Image,
+    imageTablet: p3ImageTablet,
+    separateImageTablet: p3ImageSeparate,
     description:
       "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
     features1:
@@ -107,6 +123,8 @@ export const allProducts = [
     name: "ZX9 Speaker",
     price: 4500,
     image: p4Image,
+    imageTablet: p4ImageTablet,
+    separateImageTablet: p4ImageSeparate,
     description:
       "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
     features1:
@@ -131,6 +149,8 @@ export const allProducts = [
     name: "ZX7 Speaker",
     price: 3500,
     image: p5Image,
+    imageTablet: p5ImageTablet,
+    separateImageTablet: p5ImageSeparate,
     description:
       "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
     features1:
@@ -155,6 +175,8 @@ export const allProducts = [
     name: "YX1 WIRELESS Earphones",
     price: 599,
     image: p6Image,
+    imageTablet: p6Image,
+    separateImageTablet: p6Image,
     description:
       "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
     features1:
